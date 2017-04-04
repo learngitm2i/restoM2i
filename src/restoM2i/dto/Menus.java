@@ -5,7 +5,7 @@ public class Menus {
 	private String entrees;
 	private String plats;
 	private String desserts;
-	private float prix;
+	
 	
 	
 	
@@ -13,7 +13,7 @@ public class Menus {
 		this.entrees = entrees;
 		this.plats = plats;
 		this.desserts = desserts;
-		this.prix = prix;
+		
 	}
 	
 	public String getEntrees() {
@@ -34,10 +34,6 @@ public class Menus {
 	public void setDesserts(String desserts) {
 		this.desserts = desserts;
 	}
-	public float getPrix() {
-		return prix;
-	}
-	public void setPrix(float prix) {
-		this.prix = prix;
-	}
+	
+	
 }
