@@ -27,9 +27,9 @@ public class MenuControleur extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String entree = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("");
-		String plat = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("");
-		String dessert = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("");
+		String entree = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("salade");
+		String plat = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("sandwish");
+		String dessert = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("yahourt");
 
 		request.setAttribute("entree", entree);
 		request.setAttribute("plat", plat);
