@@ -80,7 +80,8 @@
 
 					
 
-					$.post("menuServlet", {"menu" : menu });
+					$.post("menuServlet", {"menu" : menu }) 
+					});
 			</script>
 </body>
 	</html>
