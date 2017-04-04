@@ -9,7 +9,12 @@ public class Menus {
 	
 	
 	
-	public Menus(String entrees, String plats, String desserts, float prix) {
+	public Menus() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Menus(String entrees, String plats, String desserts) {
 		this.entrees = entrees;
 		this.plats = plats;
 		this.desserts = desserts;

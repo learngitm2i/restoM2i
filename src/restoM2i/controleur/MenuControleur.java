@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import restoM2i.dto.Menus;
+
 /**
  * Servlet implementation class MenuControleur
  */
@@ -24,23 +26,33 @@ public class MenuControleur extends HttpServlet {
 	}
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String entree = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("salade");
 		String plat = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("sandwish");
 		String dessert = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("yahourt");
 
-		request.setAttribute("entree", entree);
-		request.setAttribute("plat", plat);
-		request.setAttribute("dessert", dessert);
+		Menus menu = new Menus();
+
+		menu.setEntrees(entree);
+		menu.setPlats(plat);
+		menu.setDesserts(dessert);
+
+		request.setAttribute("entree", menu.getEntrees());
+		request.setAttribute("plat", menu.getPlats());
+		request.setAttribute("dessert", menu.getDesserts());
 		request.getRequestDispatcher("resultMenu.jsp").forward(request, response);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
