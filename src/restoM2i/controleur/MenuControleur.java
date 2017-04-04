@@ -15,23 +15,22 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/menuServlet")
 public class MenuControleur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MenuControleur() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public MenuControleur() {
+		super();
+	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String entree  = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("");
-		String plat  = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("");
-		String dessert  = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("");
-		
+		String entree = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("");
+		String plat = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("");
+		String dessert = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("");
+
 		request.setAttribute("entree", entree);
 		request.setAttribute("plat", plat);
 		request.setAttribute("dessert", dessert);
@@ -43,6 +42,6 @@ public class MenuControleur extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
-	}	
+	}
 
 }
