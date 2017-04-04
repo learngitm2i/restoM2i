@@ -31,6 +31,16 @@ public class MenuControleur extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		request.getRequestDispatcher("resultMenu.jsp").forward(request, response);
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String entree = Optional.ofNullable(request.getParameter("menu[entree]")).orElse("salade");
 		String plat = Optional.ofNullable(request.getParameter("menu[plat]")).orElse("sandwish");
 		String dessert = Optional.ofNullable(request.getParameter("menu[dessert]")).orElse("yahourt");
@@ -44,15 +54,6 @@ public class MenuControleur extends HttpServlet {
 		request.setAttribute("entree", menu.getEntrees());
 		request.setAttribute("plat", menu.getPlats());
 		request.setAttribute("dessert", menu.getDesserts());
-		request.getRequestDispatcher("resultMenu.jsp").forward(request, response);
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		doGet(request, response);
 	}
 
