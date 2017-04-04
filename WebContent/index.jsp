@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>
-		<a href="formMenu.jsp"> cree votre menu </a>
+		<a href="formMenu.jsp"> creer votre menu </a>
 	</h1>
 </body>
 </html>
