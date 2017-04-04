@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
 	<jsp:directive.page contentType="text/html; charset=ISO-8859-1"
 		pageEncoding="ISO-8859-1" session="false" />
@@ -8,7 +8,7 @@
 		omit-xml-declaration="true" />
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Insert title here</title>
+<title>Votre Menu</title>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
 
 
 				<div class="row form-control">
-					<label for="entree">entree</label>
+					<label for="entree">entrée</label>
 				</div>
 
 				<div class="row form-control ">
@@ -76,11 +76,11 @@
 					var entree = $("#entree").val()
 					var plat = $("#plat").val()
 					var dessert = $("#dessert").val()
-					var menu = {entree,plat,dessert}
+					var menu = {"entrée" : entree,"plat" : plat,"dessert" : dessert}
 
 					
 
-					$.post("", {"menu" : menu }
+					$.post("menuServlet", {"menu" : menu }
 			</script>
 </body>
 	</html>
