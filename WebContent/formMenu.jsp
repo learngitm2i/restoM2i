@@ -76,11 +76,11 @@
 					var entree = $("#entree").val()
 					var plat = $("#plat").val()
 					var dessert = $("#dessert").val()
-					var menu = {"entrée" : entree,"plat" : plat,"dessert" : dessert}
+					var menu = {"entree" : entree,"plat" : plat,"dessert" : dessert}
 
 					
 
-					$.post("menuServlet", {"menu" : menu }
+					$.post("menuServlet", {"menu" : menu });
 			</script>
 </body>
 	</html>
